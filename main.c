@@ -13,7 +13,7 @@ int main()
     int closed = 1500;
     int tophat = 0;
     int black = 3300;
-    int black2 = 800;
+    int grey = 800;
     int power;
     
     printf("pool noodel time\n");
@@ -52,7 +52,7 @@ int main()
     msleep(2000);
     
     // turns until it finds black
-    while (analog(tophat) <= black2)
+    while (analog(tophat) <= grey)
     {
     	motor(left, 25);
     	msleep(500);
@@ -74,7 +74,7 @@ int main()
     motor(right, 50);
     msleep(5250);
     
-    while (analog(tophat) <= black2)
+    while (analog(tophat) <= grey)
     {
     	motor(right, 50);
     	msleep(500);
@@ -85,7 +85,7 @@ int main()
     msleep(2000);
     
     // turns right to line follow
-    while (analog(tophat) <= black2)
+    while (analog(tophat) <= grey)
     {
         motor(left, 25);
         motor(right, 25);
@@ -100,7 +100,7 @@ int main()
 
         
    	// line follows on the grey until it bumps
-    line_follow(right, left, power, black2, tophat, touch);
+    line_follow(right, left, power, grey, tophat, touch);
     
     ao();
     msleep(2000);
